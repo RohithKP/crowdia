@@ -1,92 +1,40 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <client-only placeholder="loading...">
+    <v-row class="masonry" v-masonry item-selector=".child">
+      <v-col v-masonry-tile class="child" cols="12" sm="6" lg="4" xl="3">
+        <idea-card></idea-card>
+      </v-col>
+      <!-- card 2-->
+      <v-col v-masonry-tile class="child" cols="12" sm="6" lg="4" xl="3">
+        <idea-card></idea-card>
+      </v-col>
+      <!-- card 3 -->
+      <v-col v-masonry-tile class="child" cols="12" sm="6" lg="4" xl="3">
+        <idea-card></idea-card>
+      </v-col>
+      <!-- card 4 -->
+      <v-col v-masonry-tile class="child" cols="12" sm="6" lg="4" xl="3">
+        <idea-card></idea-card>
+      </v-col>
+    </v-row>
+  </client-only>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<script lang="ts">
+import { Component, Vue } from "nuxt-property-decorator";
+import IdeaCard from "~/components/IdeaCard.vue";
 
-export default {
+@Component({
   components: {
-    Logo,
-    VuetifyLogo
+    "idea-card": IdeaCard
+  }
+})
+export default class MyClass extends Vue {
+  text = "This is the index page";
+  mounted() {
+    console.log("hey");
   }
 }
 </script>
+
+<style scoped lang="scss"></style>

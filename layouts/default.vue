@@ -6,7 +6,20 @@
       :clipped="clipped"
       fixed
       app
+      color="deep-orange darken-3"
+      dark
     >
+      <v-list-item>
+        <v-list-item-avatar color="white">
+          <v-icon dark>mdi-account-circle</v-icon>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            John Doe
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -23,38 +36,35 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-footer fixed>
+        <span>Crowdia &copy; 2020</span>
+      </v-footer>
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
       fixed
       app
+      flat
+      dark
+      color="blue-grey darken-4"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
+      <nuxt-link to="/">
+        <div class="yellow logo-wrapper pa-1">
+          <v-icon color="amber" dark>mdi-lightbulb-on-outline </v-icon>
+          <v-toolbar-title v-text="title" class="ml-1 logo" />
+        </div>
+      </nuxt-link>
       <v-spacer />
       <v-btn
-        icon
+        class="mx-2"
+        fab
+        dark
+        small
+        color="indigo"
         @click.stop="rightDrawer = !rightDrawer"
       >
-        <v-icon>mdi-menu</v-icon>
+        <v-icon dark>mdi-pencil</v-icon>
       </v-btn>
     </v-app-bar>
     <v-content>
@@ -62,12 +72,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
+    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
@@ -79,39 +84,44 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      clipped: false,
-      drawer: false,
+      clipped: true,
+      drawer: true,
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: "mdi-chart-bubble",
+          title: "About",
+          to: "/about"
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
-    }
+      title: "CROWDIA"
+    };
   }
-}
+};
 </script>
+<style lang="scss">
+.logo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0;
+  border-radius: 13px;
+  align-items: baseline;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  letter-spacing: 3px;
+}
+</style>

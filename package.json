@@ -13,18 +13,21 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nuxt": "^2.0.0",
+    "nuxt-property-decorator": "^2.7.2",
+    "vue-masonry": "^0.11.8"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "@nuxt/typescript-build": "^0.6.0",
+    "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
-    "vue-jest": "^4.0.0-0",
-    "ts-jest": "^25.0.0"
+    "nodemon": "^1.18.9",
+    "ts-jest": "^25.0.0",
+    "vue-jest": "^4.0.0-0"
   }
 }
