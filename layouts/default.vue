@@ -3,7 +3,7 @@
     <c-left-nav-drawer />
     <v-app-bar clipped-left clipped app flat dark color="blue-grey darken-4">
       <v-app-bar-nav-icon @click.stop="$root.$emit('toggle-nav-drawer')" />
-      <nuxt-link to="/" class="amber logo-wrapper pa-1 ml-4 mr-4 flex-shrink-0">
+      <nuxt-link to="/" class="logo-wrapper pa-1 ml-4 mr-4 flex-shrink-0">
         <v-icon dark>mdi-lightbulb-on-outline </v-icon>
         <v-toolbar-title v-text="title" class="ml-1 logo" />
       </nuxt-link>
@@ -16,16 +16,9 @@
         prepend-inner-icon="mdi-magnify"
         xs="12"
       ></v-text-field>
-      <!-- <v-btn
-        class="mx-2"
-        fab
-        dark
-        small
-        color="indigo"
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon dark>mdi-pencil</v-icon>
-      </v-btn> -->
+      <v-btn class="ma-2" outlined rounded color="success" to="/login">
+        <v-icon left>mdi-account</v-icon> Sign In
+      </v-btn>
     </v-app-bar>
     <v-content>
       <v-responsive height="calc(100vh - 70px)" class="overflow-y-auto">
@@ -67,4 +60,24 @@ a {
 .logo {
   letter-spacing: 3px;
 }
+
+// scrollbar style
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #263238;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #263238;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+// end - scrollbar style
 </style>

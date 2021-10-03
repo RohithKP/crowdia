@@ -7,7 +7,7 @@
     color="blue-grey darken-3"
     dark
   >
-    <v-list-item class="user-details" to="/user/1">
+    <v-list-item class="user-details" to="/user/1/test">
       <v-list-item-avatar color="white">
         <v-icon dark>mdi-account-circle</v-icon>
       </v-list-item-avatar>

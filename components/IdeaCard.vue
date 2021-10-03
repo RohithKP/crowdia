@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" color="#FFFBE6" max-width="400">
+  <v-card class="mx-auto idea-card">
     <v-list-item>
       <v-list-item-avatar style="background-color: tomato;">
         <v-icon color="white">mdi-account-circle</v-icon>
@@ -62,4 +62,8 @@ import { Component, Vue } from "nuxt-property-decorator";
 export default class IdeaCard extends Vue {}
 </script>
 
-<style ${2|scoped,|} lang="scss"></style>
+<style ${2|scoped,|} lang="scss">
+.idea-card {
+  // max-width: 320px;
+}
+</style>

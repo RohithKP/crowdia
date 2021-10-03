@@ -15,19 +15,28 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
-    "nuxt": "^2.0.0",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.2",
+    "nuxt": "^2.14.4",
     "nuxt-property-decorator": "^2.7.2",
-    "vue-masonry": "^0.11.8"
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-twitter": "^1.0.4",
+    "vue-masonry": "^0.11.8",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/typescript-build": "^0.6.7",
     "@nuxtjs/eslint-config-typescript": "^2.0.0",
     "@nuxtjs/vuetify": "^1.0.0",
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "@vue/test-utils": "^1.0.5",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
     "ts-jest": "^25.0.0",
-    "vue-jest": "^4.0.0-0"
+    "vue-jest": "^4.0.0-beta.5"
   }
 }
